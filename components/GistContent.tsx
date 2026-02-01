@@ -70,7 +70,7 @@ export const GistContent: React.FC<GistContentProps> = ({ data }) => {
                  {file.filename}
                </div>
              )}
-            <article className="prose prose-slate prose-xl max-w-none print:prose-lg print:leading-relaxed">
+            <article className="prose prose-slate prose-lg max-w-none print:leading-relaxed">
               <ReactMarkdown 
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeHighlight]}
