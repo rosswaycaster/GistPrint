@@ -28,11 +28,11 @@ export const GistContent: React.FC<GistContentProps> = ({ data }) => {
     <div className="w-full max-w-4xl mx-auto bg-white shadow-sm sm:rounded-xl overflow-hidden print-content">
       {/* Header */}
       <div className="border-b border-gray-100 bg-gray-50/50 p-6 print:p-0 print:bg-white print:border-b-2 print:border-gray-800 print:mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2 font-serif">
+        <h1 className="text-3xl font-bold text-gray-900 mb-3 font-serif">
             {Object.keys(data.files)[0]}
         </h1>
         {data.description && (
-          <p className="text-gray-600 mb-4 font-serif italic">{data.description}</p>
+          <p className="text-lg text-gray-600 mb-5 font-serif italic">{data.description}</p>
         )}
         
         <div className="flex flex-wrap gap-4 text-sm text-gray-500 print:text-xs print:text-gray-600">
@@ -66,11 +66,11 @@ export const GistContent: React.FC<GistContentProps> = ({ data }) => {
         {filesToRender.map((file, index) => (
           <div key={file.filename} className={`mb-12 ${index !== 0 ? 'border-t pt-8 print:break-before-page' : ''}`}>
              {filesToRender.length > 1 && (
-               <div className="mb-6 font-mono text-xs text-gray-400 uppercase tracking-wider border-b pb-2">
+               <div className="mb-6 font-mono text-sm text-gray-400 uppercase tracking-wider border-b pb-2">
                  {file.filename}
                </div>
              )}
-            <article className="prose prose-slate prose-lg max-w-none print:prose-base print:leading-relaxed">
+            <article className="prose prose-slate prose-xl max-w-none print:prose-lg print:leading-relaxed">
               <ReactMarkdown 
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeHighlight]}

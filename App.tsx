@@ -95,7 +95,7 @@ const App: React.FC = () => {
             <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl mb-4">
               Print your Gists beautifully.
             </h1>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 mb-8">
               Paste a GitHub Gist URL below to generate a clean, distraction-free document ready for printing or PDF export.
             </p>
 
@@ -107,7 +107,7 @@ const App: React.FC = () => {
                 <input
                   id="gist-url-input"
                   type="text"
-                  className="block w-full pl-11 pr-32 py-4 border-2 border-gray-200 rounded-2xl leading-5 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-lg transition-all shadow-sm hover:border-gray-300"
+                  className="block w-full pl-11 pr-32 py-4 border-2 border-gray-200 rounded-2xl leading-5 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-xl transition-all shadow-sm hover:border-gray-300"
                   placeholder="https://gist.github.com/username/id"
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
