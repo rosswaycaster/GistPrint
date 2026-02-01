@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Print specific overrides */
+  @media print {
+    @page {
+      margin: 3.5cm;
+      padding: 1cm;
+      size: auto;
+    }
+    
+    body {
+      background: white !important;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    /* Hide everything by default that isn't content */
+    .no-print, nav, footer, button, input {
+      display: none !important;
+    }
+
+    /* Ensure content is visible and takes full width */
+    #root, main, .print-content {
+      display: block !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      max-width: none !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    /* Prevent breaks inside code blocks if possible */
+    pre, blockquote {
+      page-break-inside: avoid;
+    }
+    
+    /* Ensure links are readable but not underlined intensely */
+    a {
+      text-decoration: none !important;
+      color: #000 !important;
+    }
+  }
+}
