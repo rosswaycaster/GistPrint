@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import { GistData } from '../types';
+import { GistData, GistFile } from '../types';
 import { Calendar, User, FileText } from 'lucide-react';
 
 interface GistContentProps {
@@ -10,7 +10,7 @@ interface GistContentProps {
 }
 
 export const GistContent: React.FC<GistContentProps> = ({ data }) => {
-  const files = Object.values(data.files);
+  const files = Object.values(data.files) as GistFile[];
   // Prioritize markdown files
   const markdownFiles = files.filter(f => f.language === 'Markdown' || f.filename.endsWith('.md'));
   // If no markdown, just take all files that have content

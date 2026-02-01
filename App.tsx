@@ -176,7 +176,17 @@ const App: React.FC = () => {
 
       {/* Footer - Hidden on Print */}
       <footer className="py-6 text-center text-sm text-gray-400 no-print">
-        <p>&copy; {new Date().getFullYear()} GistPrint. Not affiliated with GitHub.</p>
+        <p>
+          &copy; {new Date().getFullYear()} GistPrint. Not affiliated with GitHub 
+          <a 
+            href="https://github.com/rosswaycaster/GistPrint" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-gray-600 transition-colors ml-1 underline decoration-dotted"
+          >
+             (but we live there anyway).
+          </a>
+        </p>
       </footer>
     </div>
   );
