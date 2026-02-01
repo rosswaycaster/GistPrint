@@ -1,0 +1,5 @@
+{
+  "name": "GistPrint",
+  "description": "A clean, distraction-free tool to pretty-print Markdown content from GitHub Gists.",
+  "requestFramePermissions": []
+}

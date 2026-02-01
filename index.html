@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GistPrint</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Merriweather', 'serif'],
+            },
+            typography: {
+              DEFAULT: {
+                css: {
+                  maxWidth: '100%',
+                  'code::before': { content: '""' },
+                  'code::after': { content: '""' },
+                  pre: { 
+                    backgroundColor: '#f6f8fa',
+                    color: '#24292e',
+                  }
+                },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+      
+      /* Print specific overrides */
+      @media print {
+        @page {
+          margin: 1.5cm;
+          size: auto;
+        }
+        
+        body {
+          background: white !important;
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+
+        /* Hide everything by default that isn't content */
+        .no-print, nav, footer, button, input {
+          display: none !important;
+        }
+
+        /* Ensure content is visible and takes full width */
+        #root, main, .print-content {
+          display: block !important;
+          width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          max-width: none !important;
+          box-shadow: none !important;
+          border: none !important;
+        }
+
+        /* Prevent breaks inside code blocks if possible */
+        pre, blockquote {
+          page-break-inside: avoid;
+        }
+        
+        /* Ensure links are readable but not underlined intensely */
+        a {
+          text-decoration: none !important;
+          color: #000 !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "remark-gfm": "https://esm.sh/remark-gfm@^4.0.1",
+    "rehype-highlight": "https://esm.sh/rehype-highlight@^7.0.0",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen">
+    <div id="root"></div>
+  </body>
+</html>
