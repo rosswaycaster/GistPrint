@@ -21,7 +21,7 @@ GistPrint strips away the noise, focusing entirely on the content, making it per
 
 ## Usage
 
-1. **Copy URL**: Copy the URL of any public GitHub Gist (e.g., `https://gist.github.com/username/12345...`).
+1. **Copy URL**: Copy the URL of a GitHub Gist (public or secret) (e.g., `https://gist.github.com/username/12345...`).
 2. **Paste**: Paste it into the input field on GistPrint.
 3. **Load**: Click "Load" to fetch and render the content.
 4. **Print**: Click the "Print" button. Your browser's print dialog will open with a clean version of the document ready for printing or saving as PDF.
@@ -33,4 +33,4 @@ GistPrint strips away the noise, focusing entirely on the content, making it per
 - **Tailwind CSS + Typography**: For beautiful, prose-optimized styling.
 - **React Markdown**: To render the Gist content securely.
 - **Rehype Highlight**: For server-side compatible syntax highlighting.
-- **GitHub API**: To fetch public Gist data.
+- **GitHub API**: To fetch Gist data.
