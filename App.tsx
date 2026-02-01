@@ -17,6 +17,61 @@ const App: React.FC = () => {
     if (input) input.focus();
   }, []);
 
+  // Update Page Title and SEO Meta Tags based on state
+  useEffect(() => {
+    if (gistData) {
+      const fileName = Object.keys(gistData.files)[0];
+      const owner = gistData.owner?.login || 'Anonymous';
+      
+      const title = `${fileName} by ${owner} - GistPrint`;
+      const description = `Read and print "${fileName}" by ${owner} in a clean, distraction-free format using GistPrint.`;
+      
+      document.title = title;
+      
+      // Update Meta Tags
+      const metaTags = {
+        'description': description,
+        'og:title': title,
+        'og:description': description,
+        'twitter:title': title,
+        'twitter:description': description
+      };
+
+      Object.entries(metaTags).forEach(([name, content]) => {
+        // Handle standard name and property attributes
+        let element = document.querySelector(`meta[name="${name}"]`);
+        if (!element) element = document.querySelector(`meta[property="${name}"]`);
+        
+        if (element) {
+          element.setAttribute('content', content);
+        }
+      });
+      
+    } else {
+      const title = 'GistPrint - Pretty Print GitHub Gists & Save as PDF';
+      const description = 'Instantly format GitHub Gists for printing and PDF export. Remove UI clutter, apply syntax highlighting, and generate clean, readable Markdown documentation.';
+      
+      document.title = title;
+      
+      const metaTags = {
+        'description': description,
+        'og:title': title,
+        'og:description': description,
+        'twitter:title': title,
+        'twitter:description': description
+      };
+
+      Object.entries(metaTags).forEach(([name, content]) => {
+        let element = document.querySelector(`meta[name="${name}"]`);
+        if (!element) element = document.querySelector(`meta[property="${name}"]`);
+        
+        if (element) {
+          element.setAttribute('content', content);
+        }
+      });
+    }
+  }, [gistData]);
+
   const handleLoad = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     

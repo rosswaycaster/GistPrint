@@ -1,11 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/WebApplication">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GistPrint</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>GistPrint - Pretty Print GitHub Gists & Save as PDF</title>
+    <meta name="title" content="GistPrint - Pretty Print GitHub Gists & Save as PDF" />
+    <meta name="description" content="Instantly format GitHub Gists for printing and PDF export. Remove UI clutter, apply syntax highlighting, and generate clean, readable Markdown documentation." />
+    <meta name="keywords" content="github gist, gist printer, markdown viewer, gist to pdf, code snippet printer, developer tools, pretty print markdown, syntax highlighting" />
+    <meta name="author" content="GistPrint" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.gistprint.com" />
+
+    <!-- Icons -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖨️</text></svg>">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.gistprint.com" />
+    <meta property="og:title" content="GistPrint - Pretty Print GitHub Gists" />
+    <meta property="og:description" content="Turn cluttered GitHub Gists into beautiful, printable documents. Free, fast, and privacy-focused." />
+    <meta property="og:image" content="https://opengraph.githubassets.com/1/rosswaycaster/GistPrint" />
+    <meta property="og:site_name" content="GistPrint" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.gistprint.com" />
+    <meta property="twitter:title" content="GistPrint - Pretty Print GitHub Gists" />
+    <meta property="twitter:description" content="Turn cluttered GitHub Gists into beautiful, printable documents. Free, fast, and privacy-focused." />
+    <meta property="twitter:image" content="https://opengraph.githubassets.com/1/rosswaycaster/GistPrint" />
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://esm.sh">
+
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    
     <script>
       tailwind.config = {
         theme: {
@@ -88,6 +126,35 @@
     "react-markdown": "https://esm.sh/react-markdown@^10.1.0"
   }
 }
+</script>
+<!-- Structured Data -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GistPrint",
+    "url": "https://www.gistprint.com",
+    "headline": "Pretty Print GitHub Gists",
+    "description": "A clean, distraction-free tool to pretty-print Markdown content from GitHub Gists. Optimized for PDF export and physical printing.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Ross Waycaster",
+      "url": "https://github.com/rosswaycaster"
+    },
+    "featureList": [
+      "Markdown pretty-printing",
+      "Syntax highlighting",
+      "PDF export optimization",
+      "Distraction-free reading mode"
+    ]
+  }
 </script>
 </head>
   <body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen">
